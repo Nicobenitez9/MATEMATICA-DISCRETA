@@ -1,0 +1,30 @@
+   def generar_secuencia(nrInicio, nrFin, n, posActual, listaSecuencia):
+    if posActual >= n:
+        return listaSecuencia 
+
+  
+    diferencia = (nrFin - nrInicio) / (n - 1)
+    
+    
+    nrSiguiente = nrInicio + posActual * diferencia
+    listaSecuencia.append(round(nrSiguiente,1))
+    
+  
+    return generar_secuencia(nrInicio, nrFin, n, posActual + 1, listaSecuencia)
+
+
+print("Ingrese el primer y último número de la sucesión:")
+nrInicio = float(input("Primer número: "))
+nrFin = float(input("Último número: "))
+print ("")
+print("Ingrese el número total de términos de la sucesión:")
+n = int(input("Número total de términos: "))
+
+
+listaSecuencia = []
+
+
+generar_secuencia(nrInicio, nrFin, n, 0, listaSecuencia)
+
+
+print("Secuencia generada:\n"f"{listaSecuencia}")
